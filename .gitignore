@@ -6,8 +6,14 @@ coverage/
 profiles/
 chrome_profile/
 __pycache__/
+assets/
 *.pyc
-.DS_Store
+*.pma
+*.ldb
 *.log
+*.db
+*.sqlite
+*.sqlite3
+.DS_Store
 .env*
 !.env.example
