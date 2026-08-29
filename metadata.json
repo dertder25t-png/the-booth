@@ -1,0 +1,6 @@
+{
+  "name": "Stream Command Center",
+  "description": "Multi-stream video wall command center with layout presets, RedZone auto-switcher, audio controls, and Playwright output coordinate mapping.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

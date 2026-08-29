@@ -1,0 +1,13 @@
+node_modules/
+build/
+dist/
+coverage/
+.venv/
+profiles/
+chrome_profile/
+__pycache__/
+*.pyc
+.DS_Store
+*.log
+.env*
+!.env.example

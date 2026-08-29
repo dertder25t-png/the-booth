@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #3f3f46;
+    border-radius: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #52525b;
+  }
+
+  /* Glassmorphic volume slider styling */
+  input[type="range"].glass-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 9999px;
+    outline: none;
+    transition: all 0.2s ease;
+  }
+
+  input[type="range"].glass-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #3b82f6;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+    cursor: pointer;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+  }
+
+  input[type="range"].glass-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.25);
+    background: #60a5fa;
+  }
+
+  input[type="range"].glass-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #3b82f6;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+    cursor: pointer;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+  }
+}
+
