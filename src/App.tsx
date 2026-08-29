@@ -358,7 +358,7 @@ export default function App() {
     const fetchGames = async () => {
       try {
         const res = await fetch(
-          'https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard'
+          'https://site.api.espn.com/apis/site/v2/sports/football/college-football/scoreboard?groups=80&dates=20260829'
         );
         const data: ESPNResponse = await res.json();
         if (!mounted) return;

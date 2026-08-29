@@ -180,7 +180,6 @@ async def launch_stream(request: LaunchRequest) -> dict[str, str]:
             headless=False,
             ignore_default_args=["--mute-audio"],
             args=[
-                f"--app={target_url}",
                 f"--window-position={coords.x},{coords.y}",
                 f"--window-size={coords.width},{coords.height}",
                 "--no-first-run",
@@ -188,10 +187,19 @@ async def launch_stream(request: LaunchRequest) -> dict[str, str]:
                 "--autoplay-policy=no-user-gesture-required",
                 "--hide-crash-restore-bubble",
                 "--disable-infobars",
+                "--disable-blink-features=AutomationControlled",
+                "--disable-dev-shm-usage",
+                "--disable-gpu",
             ],
         )
 
         page = context.pages[0] if context.pages else await context.new_page()
+        try:
+            await page.goto(target_url, wait_until="domcontentloaded", timeout=90000)
+        except Exception:
+            with suppress(Exception):
+                await page.goto(target_url, wait_until="load", timeout=120000)
+
         entry = {
             "context": context,
             "page": page,
